@@ -37,11 +37,6 @@ def check_collision(r1, v1, R1, r2, v2, R2, delta_t, epsilon = 1.1, resolution_f
         # Interpolate the distance between planet 1 and 2 
         distance_interpolated = np.linalg.norm(r1_interpolated - r2_interpolated, axis=1)
 
-        print(r1_interpolated)
-        print(r2_interpolated)
-        print("\n" + str(r1_interpolated - r2_interpolated))
-        print(distance_interpolated)
-
         # Check if a collision occurs
         collision_check = np.any(distance_interpolated <= R1 + R2)
 

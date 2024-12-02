@@ -5,6 +5,23 @@ Created on Wed Nov 27 23:26:20 2024
 @author: Harsh Mishra
 """
 
+"""
+TODO LIST FOR CODE
+Check de regels onder de comment: 
+
+#check what this means:
+        inc = np.random.uniform(0, 0.05)  # Inclination (radians)
+        omega = np.random.uniform(0, 2*np.pi)  # Argument of pericenter
+        Omega = np.random.uniform(0, 2*np.pi)  # Longitude of ascending node
+        f = np.random.uniform(0, 2*np.pi)      # True anomaly
+
+Van deze regels moet relevantie en betekenis bepaald worden
+Deze regels moeten ff aanpast/gerechtvaardigd worden, deze had ik gewoon random opgeschreven
+
+Daarnaast, moet nog een goede functionaliteit wat betreft disk toegevoegd worden
+
+"""
+
 import rebound
 import numpy as np
 import matplotlib.pyplot as plt

@@ -17,7 +17,7 @@ G = 1 # Use normalized units because we already use AU, yr, Msun and Rebound exp
 sigma0 = 1e-5 # Check what value would be good
 
 years = 50000
-box_limit = 25000
+box_limit = 250000
 
 # Simulator Function
 def setup_simulation():
@@ -119,3 +119,29 @@ visualize_simulation_with_controls(trajectories, radii_trajectory, downsample_fa
 
 name = "After " + str(years) + " years"
 plot_simulation(sim, name, filename="images/n_body_simulation.png")
+
+# Plots for analysis
+
+# Calculate the average radius and number of particles over time
+average_radii = [r.mean() for r in radii_trajectory]
+particle_counts = [len(r) for r in radii_trajectory]
+
+# Average radius over time
+plt.figure(figsize=(10, 6))
+plt.plot(range(years), average_radii, label="Average Radius", color="blue")
+plt.title("Average Particle Radius Over Time")
+plt.xlabel("Time (years)")
+plt.ylabel("Average Radius (AU)")
+plt.grid(True)
+plt.legend()
+plt.savefig("images/average_radius_over_time.png")
+
+# Number of particles over time
+plt.figure(figsize=(10, 6))
+plt.plot(range(years), particle_counts, label="Number of Particles", color="red")
+plt.title("Number of Particles Over Time")
+plt.xlabel("Time (years)")
+plt.ylabel("Number of Particles")
+plt.grid(True)
+plt.legend()
+plt.savefig("images/number_of_particles_over_time.png")
